@@ -6,5 +6,9 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Tech Miners Inc.' });
 });
 
+router.get('/contact', function(req, res) {
+  res.render('contact', { title: 'Tech Miners Inc.' });
+});
+
 
 module.exports = router;
