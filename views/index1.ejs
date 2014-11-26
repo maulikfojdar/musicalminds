@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link href="/stylesheets/dashboard.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Musical Minds</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li class="dropdown">
+        <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown">Files<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="/management">Report</a></li>
+          <li><a href="/codeofconduct">Presentation</a></li>
+        </ul>
+      </li>
+            <li><a href="/contact">Contact Us</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Dashboard <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Report</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Presentation</a></li>
+          </ul>
+          
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          Vizualizations coming soon .. !!!
+
+          
+        </div>
+      </div>
+    </div>
+  
+    <footer>
+      <div class="footer">
+  	   <div class="container">
+          <p style="text-align:center;"> Copyrights. Tech Miners Inc, 2014.</p>
+	     </div>
+      </div>
+    </footer>
+    
+  </body>
+
+</html>

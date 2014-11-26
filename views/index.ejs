@@ -3,64 +3,104 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-    <link href="/stylesheets/dashboard.css" rel="stylesheet">
+    <link href="/stylesheets/local.css" rel="stylesheet">
+    <link href="/stylesheets/barchart.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   </head>
   <body>
   
-  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Musical Minds</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li class="dropdown">
-        <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown">Files<b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="/management">Report</a></li>
-          <li><a href="/codeofconduct">Presentation</a></li>
-        </ul>
-      </li>
-            <li><a href="/contact">Contact Us</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </nav>
+  <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Musical Minds</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    
+                    
+                    <li><a href="#"><i class="fa fa-list-ul"></i> Report</a></li>
+                    <li><a href="#"><i class="fa fa-tasks"></i> Presentation</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right navbar-user">
+                <li class="active"><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa fa-table"></i> Analytics</a></li>
+                    <li class="dropdown messages-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-inbox"></i> Project Files <span class="badge">2</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">2 New Files</li>
+                            <li class="message-preview">
+                                <a href="#">
+                                    <span class="avatar"><i class="fa fa-book"></i></span>
+                                    <span class="message">Project Report</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                    <span class="avatar"><i class="fa fa-download"></i></span>
+                                    <span class="message">Presentation</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                     <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+  </div>
 
-<div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Dashboard <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Report</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Presentation</a></li>
-          </ul>
-          
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
+  <div id="page-wrapper">
+  <div class="row">
+ <div class="col-lg-2">
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Words Co-occurence Dendrogram</h3>
+                        </div>
+                        <div class="panel-body">
+                              <img src="images/dendrogram.PNG" />
+                        </div>
+                    </div>
+                </div>
 
-          Vizualizations coming soon .. !!!
+                
+  </div>
 
-          
-        </div>
-      </div>
-    </div>
+   <div class="row">
+ <div class="col-lg-2">
+                </div>
+                <div class="col-lg-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Ratings per User Employment</h3>
+                        </div>
+                        <div class="panel-body">
+                              <div id="barChart"></div>
+                        </div>
+                    </div>
+                </div>
+
+                
+  </div>
+
   
+  
+<div id="tooltip" class="hidden">
+    <p><span id="value">100</span>
+    </p>
+</div>
+  </div>
     <footer>
       <div class="footer">
   	   <div class="container">
@@ -68,7 +108,8 @@
 	     </div>
       </div>
     </footer>
-    
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="javascripts/barchart.js"></script>
   </body>
 
 </html>
