@@ -1,35 +1,50 @@
 var margins = {
 	    top: 12,
-	    left: 48,
+	    left: 300,
 	    right: 24,
 	    bottom: 24
 	},
 	legendPanel = {
 	    width: 180
 	},
-	width = 500 - margins.left - margins.right - legendPanel.width,
-	    height = 500 - margins.top - margins.bottom,
+	width = 1000 - margins.left - margins.right - legendPanel.width,
+	    height = 400 - margins.top - margins.bottom,
 	    dataset = [{
 	        data: [{
 	            empStatus: 'Employed 30+ hours a week',
 	            count: 36.41
-	        }, {
-	            empStatus: 'Employed 8-29 hours per week',
-	            count: 35.91
-	        }, {
+	        },
+	        {
 	            empStatus: 'Employed part-time less than 8 hours per week',
 	            count: 36.03
 	        },
 	        {
-	            empStatus: 'Full-time housewife / househusband',
-	            count: 35.63
-	        },{
 	            empStatus: 'Full-time student',
 	            count: 35.98
 	        },
 	        {
+	            empStatus: 'Employed 8-29 hours per week',
+	            count: 35.91
+	        }, 
+	        {
+	            empStatus: 'Full-time housewife / househusband',
+	            count: 35.63
+	        },
+	        {
+	            empStatus: 'Self-employed',
+	            count: 35.49
+	        },
+	        {
 	            empStatus: 'In unpaid employment (e.g. voluntary work)',
 	            count: 34.66
+	        },
+	        {
+	            empStatus: 'Temporarily unemployed',
+	            count: 34.48
+	        },
+	        {
+	            empStatus: 'Other',
+	            count: 34.45
 	        },
 	        {
 	            empStatus: 'Part-time student',
@@ -46,19 +61,8 @@ var margins = {
 	        {
 	            empStatus: 'Retired from self-employment',
 	            count: 31.34
-	        },
-	        {
-	            empStatus: 'Self-employed',
-	            count: 35.49
-	        },
-	        {
-	            empStatus: 'Temporarily unemployed',
-	            count: 34.48
-	        },
-	        {
-	            empStatus: 'Other',
-	            count: 34.45
 	        }
+	        
 	        ],
 	        name: 'Series #1'
 	    }
