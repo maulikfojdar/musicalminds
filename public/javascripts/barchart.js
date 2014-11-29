@@ -7,8 +7,8 @@ var margins = {
 	legendPanel = {
 	    width: 180
 	},
-	width = 1000 - margins.left - margins.right - legendPanel.width,
-	    height = 400 - margins.top - margins.bottom,
+	width = 1200 - margins.left - margins.right - legendPanel.width,
+	    height = 350 - margins.top - margins.bottom,
 	    dataset = [{
 	        data: [{
 	            empStatus: 'Employed 30+ hours a week',
@@ -91,7 +91,8 @@ var margins = {
 	        return {
 	            x: d.y,
 	            y: d.x,
-	            x0: d.y0
+	            x0: d.y0,
+	            y0: d.x0
 	        };
 	    });
 	}),
@@ -164,6 +165,11 @@ var margins = {
 	        d3.select('#tooltip').classed('hidden', true);
 	    })
 
+svg.append("text")
+      .attr("x", function(d) { return xScale(d.x0) - 3; })
+      .attr("y", function(d) { return yScale(d.y)/2);})
+      .text(function(d) { return d.x; });
+});
 	    svg.append('g')
 	        .attr('class', 'axis')
 	        .attr('transform', 'translate(0,' + height + ')')
