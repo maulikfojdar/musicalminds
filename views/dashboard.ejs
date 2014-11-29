@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+    <link href="/stylesheets/local.css" rel="stylesheet">
+    <link href="/stylesheets/barchart.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+  <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Musical Minds</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    
+                    
+                    <li><a href="#"><i class="fa fa-bar-chart-o"></i> Word Co-occurence Dendrogram</a></li>
+                    <li><a href="#barChrt"><i class="fa fa-bar-chart-o"></i> Average Rating per employee status</a></li>
+                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right navbar-user">
+                <li class="active"><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa fa-table"></i> Analytics</a></li>
+                    <li class="dropdown messages-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-inbox"></i> Project Files <span class="badge">2</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">2 New Files</li>
+                            <li class="message-preview">
+                                <a href="#">
+                                    <span class="avatar"><i class="fa fa-book"></i></span>
+                                    <span class="message">Project Report</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                    <span class="avatar"><i class="fa fa-download"></i></span>
+                                    <span class="message">Presentation</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                     <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+  </div>
+
+  <div id="page-wrapper">
+  <div class="row" id="dendrogram">
+ <div class="col-lg-2">
+                </div>
+                <div class="col-lg-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Words Co-occurence Dendrogram</h3>
+                        </div>
+                        <div class="panel-body" >
+                          
+                              <img src="images/dendrogram.PNG"/>
+                          
+                        </div>
+                    </div>
+                </div>
+
+                
+  </div>
+
+   <div class="row" id="barChrt">
+ <div class="col-lg-2">
+                </div>
+                <div class="col-lg-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Ratings per User Employment</h3>
+                        </div>
+                        <div class="panel-body">
+                              <div id="barChart"></div>
+                        </div>
+                    </div>
+                </div>
+
+                
+  </div>
+
+  
+  
+<div id="tooltip" class="hidden">
+    <p><span id="value">100</span>
+    </p>
+</div>
+  </div>
+
+<br/><br/>
+    
+    <script src="javascripts/d3.min.js"></script>
+    <script src="javascripts/barchart.js"></script>
+  </body>
+
+</html>

@@ -10,5 +10,12 @@ router.get('/contact', function(req, res) {
   res.render('contact', { title: 'Tech Miners Inc.' });
 });
 
+router.get('/dashboard', function(req, res) {
+	  res.render('dashboard', { title: 'Tech Miners Inc.' });
+	});
+
+
+
+
 
 module.exports = router;
