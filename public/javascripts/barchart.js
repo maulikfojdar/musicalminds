@@ -165,11 +165,6 @@ var margins = {
 	        d3.select('#tooltip').classed('hidden', true);
 	    })
 
-svg.append("text")
-      .attr("x", function(d) { return xScale(d.x0) - 3; })
-      .attr("y", function(d) { return yScale(d.y)/2);})
-      .text(function(d) { return d.x; });
-});
 	    svg.append('g')
 	        .attr('class', 'axis')
 	        .attr('transform', 'translate(0,' + height + ')')
