@@ -28,6 +28,10 @@
                     
                     <li><a href="#"><i class="fa fa-bar-chart-o"></i> Word Co-occurence Dendrogram</a></li>
                     <li><a href="#barChrt"><i class="fa fa-bar-chart-o"></i> Average Rating per employee status</a></li>
+                    <li><a href="#piechart"><i class="fa fa-bar-chart-o"></i> Average Rating per region</a></li>
+                    <li><a href="#maleFreq"><i class="fa fa-bar-chart-o"></i> Most used words (Male)</a></li>
+                    <li><a href="#femaleFreq"><i class="fa fa-bar-chart-o"></i> Most used words (Female)</a></li>
+                    
                     
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
@@ -97,7 +101,60 @@
   </div>
 
   
-  
+  <div class="row" id="piechart">
+ <div class="col-lg-2">
+                </div>
+                <div class="col-lg-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Average Ratings per Region</h3>
+                        </div>
+                        <div class="panel-body" >
+                          
+                             <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+                          
+                        </div>
+                    </div>
+                </div>
+
+                
+  </div>
+    <div class="row" id="maleFreq">
+ <div class="col-lg-2">
+                </div>
+                <div class="col-lg-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Most used words (Male)</h3>
+                        </div>
+                        <div class="panel-body" >
+                          
+                              <img src="images/MaleFrequency.PNG" style="width:70%; height:50%;margin-left:20%"/>
+                          
+                        </div>
+                    </div>
+                </div>
+
+                
+  </div>
+    <div class="row" id="femaleFreq">
+ <div class="col-lg-2">
+                </div>
+                <div class="col-lg-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Most used words (Female)</h3>
+                        </div>
+                        <div class="panel-body" >
+                          
+                             <img src="images/FemaleFrequency.PNG" style="width:70%; height:50%;margin-left:20%"/>
+                          
+                        </div>
+                    </div>
+                </div>
+
+                
+  </div>
 <div id="tooltip" class="hidden">
     <p><span id="value">100</span>
     </p>
@@ -107,7 +164,9 @@
 <br/><br/>
     
     <script src="javascripts/d3.min.js"></script>
+     <script src="javascripts/googlechart.js"></script>
     <script src="javascripts/barchart.js"></script>
+    <script src="javascripts/piechart.js"></script>
   </body>
 
 </html>
