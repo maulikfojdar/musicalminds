@@ -7,13 +7,10 @@ var margins = {
 	legendPanel = {
 	    width: 180
 	},
-<<<<<<< HEAD
+
 	width = 1200 - margins.left - margins.right - legendPanel.width,
 	    height = 350 - margins.top - margins.bottom,
-=======
-	width = 1000 - margins.left - margins.right - legendPanel.width,
-	    height = 400 - margins.top - margins.bottom,
->>>>>>> e03b78062e02f3981d0a71081bebeed389ed451a
+
 	    dataset = [{
 	        data: [{
 	            empStatus: 'Employed 30+ hours a week',
