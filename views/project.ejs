@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+   <link href="/stylesheets/local.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <style>
+    .header {
+        color: #36A0FF;
+        font-size: 27px;
+        padding: 10px;
+    }
+
+    .bigicon {
+        font-size: 35px;
+        color: #36A0FF;
+    }
+</style>
+  </head>
+  <body>
+  
+     <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Musical Minds</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right navbar-user">
+                <li class="active"><a href="/project"><i class="fa fa-table"></i> Project</a></li>
+                <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                
+                    <li class="dropdown messages-dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-inbox"></i> Project Files <span class="badge">2</span> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">2 New Files</li>
+                            <li class="message-preview">
+                                <a href="#">
+                                    <span class="avatar"><i class="fa fa-book"></i></span>
+                                    <span class="message">Project Report</span>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="message-preview">
+                                <a href="#">
+                                    <span class="avatar"><i class="fa fa-download"></i></span>
+                                    <span class="message">Presentation</span>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                     <li  class="active"><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+  </div>
+
+  <div id="page-wrapper">
+    <div class="row">
+    <div class="col-md-2">
+    </div>
+        <div class="col-md-8">
+
+        <h1>EMI Music Data Science Challenge </h1>
+        <br/>
+        <h2> Data files </h2>
+        <br/>
+        <p> We have five important data files:</p>
+        <ol>
+        <li>
+        Train/test. This csv file contains data that relate to how people rate EMI artists, during the market research interviews, right after hearing a sample of an artist’s song. The 6 columns are:</p>
+        <ul>
+        <li>Artist. An anonymised identifier for the EMI artist.</li>
+        <li>Track. An anonymised identifier for the artist’s track.</li>
+        <li>User. An anonymised identifier for the market research respondent, who will have just heard a sample from the track.</li>
+        <li>Rating. A number between X-100 which answers the question: How much do you like or dislike the music?  (Train only, you're predicting this for the test set)</li>
+        <li>Time. The time the market research was completed: It is the anonymised research date indicating which month the research was conducted in. It can help you understand which other artists/tracks were researched in the same wave. Note it is not in chronological order</li>
+        </ul>
+        </li>
+        <li>Words. This csv file contains data that shows how people describe the EMI artists whose music they have just heard.
+        <ul>
+        <li>Artist. An anonymised identifier for the EMI artist.</li>
+        <li>User. An anonymised identifier for the market research respondent, who will have just heard one or more samples from the artist.</li>
+        <li>HEARD_OF. An entry which answers the question: Have you heard of and/or heard music by this artist?</li>
+        <li>OWN_ARTIST_MUSIC, which answers the question: Do you have this artist in your music collection?></li>
+        <li>LIKE_ARTIST. A numerical entry which answers the question: To what extent do you like or dislike listening this artist?</li>
+        <li>Finally, a list of words. There are 82 different words, ranging from “Soulful” to “Cheesy” and “Aggressive.” After listening to tracks from a particular artist, each respondent will have selected the words they think best describe the artist from a given set. The values in each column are therefore 1, if the respondent thinks that word describes the artist, 0 if the respondent does not think the word describes the artist, and empty if the word was not part of the current interview set.</li>
+        </ul>
+        </li>
+        <li>UserKey and users: The final csv files gives data about the respondents themselves, including their attitude towards music. The columns include:
+        <ul>
+        <li>User. The anonymised user identifier</li>
+        <li>Gender. Male/female</li>
+        <li>Age. The respondent’s age, in years.</li>
+        <li>Working status. Whether they are working full-time/retired/etc.</li>
+        <li>Region. The region of the United Kingdom where they live.</li>
+        <li>MUSIC. The respondent’s view on the importance of music in his/her life.</li>
+        <li>LIST_OWN. An estimate for the number of daily hours spent listening to music they own or have chosen.</li>
+        <li>LIST_BACK. An estimate for the number of daily hours the respondent spends listening to background music/music they have not chosen.</li>
+        <li>Music habit questions. Each of these asks the respondent to rate, on a scale of X-100, whether they agree with the following:
+        <ol style="list-style-type: lower-alpha">
+        <li>I enjoy actively searching for and discovering music that I have never heard before</li>
+        <li>I find it easy to find new music</li>
+        <li>I am constantly interested in and looking for more music</li>
+        <li>I would like to buy new music but I don’t know what to buy</li>
+        <li>I used to know where to find music</li>
+        <li>I am not willing to pay for music</li>
+        <li>I enjoy music primarily from going out to dance</li>
+        <li>Music for me is all about nightlife and going out</li>
+        <li>I am out of touch with new music</li>
+        <li>My music collection is a source of pride</li>
+        <li>Pop music is fun</li>
+        <li>Pop music helps me to escape</li>
+        <li>I want a multi media experience at my fingertips wherever I go</li>
+        <li>I love technology</li>
+        <li>People often ask my advice on music - what to listen to</li>
+        <li>I would be willing to pay for the opportunity to buy new music pre-release</li>
+        <li>I find seeing a new artist / band on TV a useful way of discovering new music</li>
+        <li>I like to be at the cutting edge of new music</li>
+        <li>I like to know about music before other people</li>
+        </ol>
+        </li>
+        </ul>
+        </li>
+        </ol>
+        <br/>
+        <h2> Data Cleaning</h2>
+        <br/>
+       <p> Cleaning of Words.csv</p>
+       <pre> 
+        words <- read.csv("words.csv")
+        sample_words <- read.csv("sample_words.csv")
+
+        rows1 <- is.na(sample_words)
+        sample_words[rows1] <- "0"
+
+        rows <- is.na(words$Good.Lyrics)
+        words$Good.Lyrics[rows] <- words$Good.lyrics[rows];
+        words$Good.lyrics <- NULL;
+
+        words$OWN_ARTIST_MUSIC <- as.character(words$OWN_ARTIST_MUSIC);
+        words$OWN_ARTIST_MUSIC[substr(words$OWN_ARTIST_MUSIC, 2, 2) == 'o'] <- 'Dont Know';
+        words$OWN_ARTIST_MUSIC <- factor(c(words$OWN_ARTIST_MUSIC))
+
+
+        words$HEARD_OF[words$HEARD_OF == ''] <- 'Never heard of';
+        words$HEARD_OF[words$HEARD_OF == 'Ever heard music by'] <- 'Heard of and listened to music EVER';
+        words$HEARD_OF[words$HEARD_OF == 'Ever heard of'] <- 'Heard of';
+        words$HEARD_OF[words$HEARD_OF == 'Listened to recently'] <- 'Heard of and listened to music RECENTLY';
+        words$HEARD_OF <- droplevels(words$HEARD_OF);
+        words$HEARD_OF <- factor(c(words$HEARD_OF));
+
+        write.csv(sample_words, file="sample_words.csv", row.names = FALSE)
+        write.csv(words, file="cleaned_words.csv", row.names = FALSE)
+        </pre>
+        <br/>
+        <p> Cleaning of Users.csv</p>
+        <pre>
+
+        users <- read.csv("users.csv")
+
+        #1 - male
+        #2 - female
+        users$GENDER <- factor(c(users$GENDER),labels = c("2","1"))
+
+        #Factoring working column
+        users$WORKING <- factor(c(users$WORKING))
+
+        #Factoring region column
+        users$REGION <- factor(c(users$REGION))
+
+        #Factoring music column
+        users$MUSIC <- factor(c(users$MUSIC))
+
+        #Function to fix the timings in LIST_OWN and LIST_BACK
+        clean_timing <- function (t) {
+          t = as.character(t)
+          t[t == 'Less than an hour'] <- '.5';
+          t[t == 'More than 16 hours'] <- '17';
+          t <- as.numeric(substr(t, 1, 2));
+          return(t)
+        }
+
+        users$LIST_OWN <- clean_timing(users$LIST_OWN)
+        users$LIST_BACK <- clean_timing(users$LIST_BACK)
+
+        #Writing the cleaned csv
+        write.csv(users, "cleaned_users.csv",row.names = FALSE)
+        </pre>
+        <br/>
+
+        <h2>Predictions</h2>
+        <br/>
+        <ol>
+        <li> Linear Regression <br/>
+        <p> Linear Regression is widely used in statistical analysis models. Linear Regression is a study of linear relationship between variables where the variables are independent identically normally distributed. Assume y is a dependent variable which we want to predict, and x1, x2….xN are the independent variables which we want to use to predict the y then the equation for computing the predicted value of y is: </p>
+        <p>
+        y = a0+a1x1+a2x2+....+aNxN.
+        </p>
+        <p>
+        Formula we used for creating a linear model for predicting the Rating of Test users is:</p>
+        <pre>
+formula = Rating ~ User + Artist + Track + Time + GENDER + AGE + WORKING + REGION + MUSIC + LIST_OWN + LIST_BACK + Q1 + Q2 + Q3 + Q4 + Q5 + Q6 + Q7 + Q8 + Q9 + Q10 + Q11 + Q12 + Q13 + Q14 + Q15 + Q16 + Q17 + Q18 + Q19</pre>
+        <p>RMSE <- sqrt(mean((y-y_pred)^2))</p>
+        <pre> RMSE: 23.3675 </pre>
+        </li>
+        <li> Random Forest <br/>
+        <p> The response of each tree depends on a set of predictor values chosen independently (with replacement) and with the same distribution for all trees in the forest, which is a subset of the predictor values of the original data set. The optimal size of the subset of predictor variables is given by log2 M+1, where M is the number of inputs.</p>
+        <p>For classification problems, given a set of simple trees and a set of random predictor variables, the Random Forest method defines a margin function that measures the extent to which the average number of votes for the correct class exceeds the average vote for any other class present in the dependent variable. This measure provides us not only with a convenient way of making predictions, but also with a way of associating a confidence measure with those predictions.
+        </p>
+        <p>For regression problems, Random Forests are formed by growing simple trees, each capable of producing a numerical response value. Here, too, the predictor set is randomly selected from the same distribution and for all trees. Given the above, the mean-square error for a Random Forest is given </p>
+        <p>
+        mean error = (observed - tree response)2
+        </p>
+        <pre> RMSE: 14.6391 </pre>
+        </li>
+
+
+    </div>
+        <div class="col-md-2">
+    </div>
+    </div>
+  </div>
+
+  
+<!-- <footer>
+      <div class="footer">
+       <div class="container">
+          <p style="text-align:center;"> Copyrights. Tech Miners Inc, 2014.</p>
+         </div>
+      </div>
+    </footer> -->
+    <script>
+    function submit1(){
+        alert("Form Submitted Successfully.");
+    }
+    </script>
+  </body>
+
+</html>

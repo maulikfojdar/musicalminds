@@ -1,2 +1,2 @@
 library(ggdendro)
-ggdendrogram(hclust(dist(mtcars)))
+ggdendrogram(hclust(dist(words_sample)))

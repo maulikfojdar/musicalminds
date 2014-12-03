@@ -14,6 +14,9 @@ router.get('/dashboard', function(req, res) {
 	  res.render('dashboard', { title: 'Tech Miners Inc.' });
 	});
 
+router.get('/project', function(req, res) {
+	  res.render('project', { title: 'Tech Miners Inc.' });
+	});
 
 
 
